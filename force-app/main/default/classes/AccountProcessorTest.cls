@@ -26,5 +26,4 @@ private without sharing class AccountProcessorTest {
         for(Account acc:accountlist)
         System.assertEquals(1,acc.Number_Of_Contacts__c, 'ERROR: error is occured');
     }
-    
 }
