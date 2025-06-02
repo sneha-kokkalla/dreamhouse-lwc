@@ -1,10 +1,10 @@
-public without sharing class LeadProcessor implements Database.Batchable<sObject>{
+public without sharing class LeadProcessor implements Database.Batchable<sObject> {
     // instance member to retain state across transactions
     public Database.QueryLocator start(Database.BatchableContext dbc) {
         // return a query locator for the records to be processed
         return Database.getQueryLocator([SELECT Id, Name FROM Lead]);
     }
-    public void Database.execute(Database.BatchableContext dbc, List<Lead> leads) {
+    public void execute(Database.BatchableContext dbc, List<Lead> leads) {
         // process each batch of records
         for (Lead l : leads) {
             
