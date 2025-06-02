@@ -6,7 +6,7 @@ private class LeadProcessorTest {
         
         // Load test data
         List<Lead> leads = new List<Lead>();
-        for (Integer i=0; i<200; i++) {
+        for (Integer i=0; i<300; i++) {
             leads.add(new Lead(LastName='Connock', Company='Salesforce'));
         }
         insert leads;
@@ -19,6 +19,6 @@ private class LeadProcessorTest {
         
         // Check the result
         List<Lead> updatedLeads = [SELECT Id FROM Lead WHERE LeadSource = 'Dreamforce'];
-        System.assertEquals(200, updatedLeads.size(), 'ERROR: At least 1 Lead record not updated correctly');
+        System.assertEquals(300, updatedLeads.size(), 'ERROR: At least 1 Lead record not updated correctly');
     }
 }
